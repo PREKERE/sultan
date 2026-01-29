@@ -8,7 +8,7 @@ const CONFIG = {
   SMTP_SECURE: true,
   DEFAULT_RECIPIENT: 'smb@support.whatsapp.com',
   LOG_FILE: __dirname + '/../email_logs.txt',
-  VALID_KEYS: ['hanz'] // 🔐 daftar key yang boleh
+  VALID_KEYS: ['hanzer'] // 🔐 daftar key yang boleh
 }
 
 // ====== SISTEM LIMIT API ======
@@ -16,7 +16,7 @@ const LIMIT = new Map()
 const COOLDOWN = 2 * 60 * 1000 // 2 menit
 
 function checkRateLimit(key) {
-  if (key === 'hanz') return false // adminv1 bebas limit
+  if (key === 'hanzer') return false // adminv1 bebas limit
   const lastUse = LIMIT.get(key)
   if (!lastUse) {
     LIMIT.set(key, Date.now())
